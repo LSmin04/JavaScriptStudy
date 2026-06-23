@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /* var 선언 */
+    {
+      // 특징1. 동적 할당 
+      var a;  // 초기 할당이 없으면 undefined 값을 가짐 // int a; 자바에서는 쓰레기 값을 가짐? 
+      console.log(a, typeof a);
+      
+      var a;  // 재선언 가능
+      a = 19; // number 타입 값 할당
+      console.log(a, typeof a);
+      
+      a = 'hello world';  // string 값 할당
+      console.log(a, typeof a);
+
+    }
+
+    // var 특징2. 선언된 중괄호를 블록으로 인식X, 블록하고 상관 없음.
+    console.log(a);
+
+    /* let, const: 지역 변수 개념으로 사용 가능 */
+    {
+      let b;    // 초기 할당이 없으면 undefined
+      const c = true; // 초기 할당이 필수 (상수)
+      
+      b = 10;
+      console.log(b);
+      b = 'hello world';
+      console.log(b);   // 동적 할당 특징은 그대로 유지
+
+      // let b; // 재선언 불가
+    }
+
+    // console.log(b);  // 스코프를 벗어나면 접근 불가
+    // console.log(c);
+
+    /* Template Literal */
+    {
+      const age = 10;
+      const a = '나는 ' + age + '살입니다.'; // 연결하기
+      const b = `나는 ${age}살입니다.`; // expression interpolation
+      console.log(a, b);
+
+    }
+
+    /* Hoisting */
+    {
+      money = 1000;
+      console.log(money);
+      var money;  // JavaScript 인터프리터가 var 선언부(var money부분까지)를 가장 먼저 읽어 처리합니다.
+
+      console.log(car);
+      var car = 'sonata'; // var car; 선언
+                          // car = 'conata';  할당
+      console.log(car);
+
+    }
+
+  </script>
+  
+</body>
+</html>
